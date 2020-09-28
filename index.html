@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Login Form</title>
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+
+</head>
+
+<body>
+	<script>
+          function myFunction() {
+          
+          
+          if (document.getElementById("mobile").value == 8530693698 && document.getElementById("password").value == "Abc@123") {
+              alert('Login Successfully');
+                } else {
+             alert('Credentials are Incorrect');
+             }
+
+          }
+         function check(){
+
+         	var a = document.getElementById("mobile").value;
+         	if((a.charAt(0)!= 9) && (a.charAt(0)!= 8) && (a.charAt(0)!= 7)) {
+         		document.getElementById("Message").innerHTML="** Invalid number";
+         		return false;
+         	}
+         }
+         
+ 
+   </script>
+
+	<div class="centerdiv">
+	<h2>User Login</h2>
+	<form>
+		<div onsubmit="check()">
+			<input type="text" id="mobile" name="text1" class="inputBox" pattern="[789][0-9]{9}" title="Invalid number" placeholder="Enter Mobile number" maxlength="10" autofocus oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> 
+
+			<!-- <input type="text" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" class="inputBox" placeholder="Enter Mobile number"/> -->
+        </div>
+        <br>
+            <div>
+		   	<input type="password" id="password" class="inputBox" placeholder="Enter password">
+           </div>
+        <br>
+            <button type="submit" onclick="myFunction()">Login</button>
+	</form>       
+	</div>
+
+ 
+
+ </body>
+</html>
